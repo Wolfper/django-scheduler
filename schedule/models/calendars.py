@@ -141,8 +141,8 @@ class Calendar(with_metaclass(ModelBase, *get_model_bases())):
     >>> calendar.events.add(event)
     '''
 
-    name = models.CharField(_("name"), max_length=200)
-    slug = models.SlugField(_("slug"), max_length=200)
+    name = models.CharField(_("name"), max_length=200, unique=True)
+    slug = models.SlugField(_("slug"), max_length=200, unique=True)
     objects = CalendarManager()
 
     class Meta(object):
