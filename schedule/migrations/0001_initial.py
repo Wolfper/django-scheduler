@@ -17,8 +17,8 @@ class Migration(migrations.Migration):
             name='Calendar',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(max_length=200, verbose_name='name')),
-                ('slug', models.SlugField(max_length=200, verbose_name='slug')),
+                ('name', models.CharField(max_length=200, verbose_name='name', unique=True)),
+                ('slug', models.SlugField(max_length=200, verbose_name='slug', unique=True)),
             ],
             options={
                 'verbose_name_plural': 'calendar',
